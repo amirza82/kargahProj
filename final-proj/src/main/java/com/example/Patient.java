@@ -7,8 +7,8 @@ public class Patient extends Person {
     private String description;
     
     public Patient(String name, String phoneNumber, String email, String address, int ID,
-                String description) {
-        super(name, phoneNumber, email, address, ID);
+                String description, String password) {
+        super(name, phoneNumber, email, address, ID, password);
         
         this.description = description;
     }
@@ -35,5 +35,10 @@ public class Patient extends Person {
         }
     }
 
+    public void addPrescription(Prescription prescription){
+        prescriptions.add(prescription);
+    }
+
+    
 
 }

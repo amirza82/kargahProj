@@ -1,20 +1,20 @@
 package com.example;
 
-import javax.print.event.PrintEvent;
-
 public class Person {
     
     private String name;
     private String phoneNumber;
     private String email;
     private String address;
-    private int ID;
+    private Integer ID;
+    private String password;
 
-    public Person(String name, String phoneNumber, String email, String address, int ID) {
+    public Person(String name, String phoneNumber, String email, String address, int ID, String password) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.ID = ID;
+        this.password = password;
     }
     public String getName() {
         return name;
@@ -34,10 +34,10 @@ public class Person {
     public void setAddress(String address) {
         this.address = address;
     }
-    public int getID() {
+    public Integer getID() {
         return ID;
     }
-    public void setID(int ID) {
+    public void setID(Integer ID) {
         this.ID = ID;
     }
     public String getEmail() {
@@ -46,6 +46,13 @@ public class Person {
     public void setEmail(String email) {
         this.email = email;
     }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String pasword) {
+        this.password = pasword;
+    }
+
 
     public void print(){
         System.out.println("Name: " + this.name);
