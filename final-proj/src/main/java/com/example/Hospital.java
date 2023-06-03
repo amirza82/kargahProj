@@ -7,8 +7,14 @@ public class Hospital {
 
     private static List<Person> staff;
     private static List<Person> patients;
-     
+    private static Admin admin = new Admin("Admin", "Password");
     
+    public static Admin getAdmin() {
+        return admin;
+    }
+    public static void setAdmin(Admin admin) {
+        Hospital.admin = admin;
+    }
     public static List<Person> getStaff() {
         return staff;
     }

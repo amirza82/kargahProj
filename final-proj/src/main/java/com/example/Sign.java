@@ -24,7 +24,7 @@ public class Sign {
     //     return null;
     // }
 
-    public Person signInStaff(String name, String password){
+    public static Person signInStaff(String name, String password){
         for (Person staff : Hospital.getStaff()) {
             if (staff.getName().equals(name) && staff.getPassword().equals(password)) {
                 return staff;
@@ -33,4 +33,12 @@ public class Sign {
         return null;
     }
 
+
+    public static Admin signInAdmin(String name, String password) {
+        if (Hospital.getAdmin().getName().equals(name) && Hospital.getAdmin().getPassword().equals(password)){
+            return Hospital.getAdmin();
+        } else {
+            return null;
+        }
+    }
 }
