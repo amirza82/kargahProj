@@ -24,14 +24,4 @@ public class Doctor extends Nurse{
         System.out.println("Profesion" + profesion);
     }
 
-    public void examinate(Patient patient, Doctor doctor){
-
-        System.out.println("Enter the prescription:\n");
-        Scanner scn = new Scanner(System.in);
-        String line = scn.nextLine();
-        scn.close();
-
-        patient.addPrescription(new Prescription(line, doctor.getID(), patient.getID()));
-    }
-
 }

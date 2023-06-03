@@ -54,13 +54,14 @@ public class Hospital {
 
     //---------------------------Doctor methods--------------------------------
 
-    public static void newVisit(Doctor doctor, Patient patient){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the prescription for this patient.\nThe patient info is as follows: \n\n");
-        patient.print();
-        System.out.print("Prescription: ");
-        patient.addPrescription(new Prescription(scanner.nextLine(), doctor.getID(), patient.getID()));
-        scanner.close();
+    public void examinate(Patient patient, Doctor doctor){
+
+        System.out.println("Enter the prescription:\n");
+        Scanner scn = new Scanner(System.in);
+        String line = scn.nextLine();
+        scn.close();
+
+        patient.addPrescription(new Prescription(line, doctor.getID(), patient.getID()));
     }
     
     public static void changePatientDescription(Doctor doctor, Patient patient) {
@@ -70,7 +71,31 @@ public class Hospital {
         scanner.close();
     }
 
+    public static void discharge(Doctor doctor, Patient patient) {
+        Hospital.patients.remove(patient);
+    }
 
+    //--------------------------------Admin Methods --------------------------------
+
+    public static void addNurse(String name, String phoneNumber, String address, int ID, String email, String password) {
+        Hospital.staff.add(new Nurse(name, phoneNumber, address, ID, email, password));
+    }
+
+    public static void addDoctor(String name, String phoneNumber, String address, int ID, String email, String profesion, String password) {
+        Hospital.staff.add(new Doctor(name, phoneNumber, address, ID, email, profesion, password));
+    }
+
+    //fire a nurse or doctor
+    public static void fireStaff(Integer ID_OF_STAFF){
+        for (Person staff : Hospital.staff) {
+            if(ID_OF_STAFF.equals(staff.getID())) {
+                Hospital.staff.remove(staff);
+                System.out.println("The employee with ID " + staff.getID() + " has been successfully fired.");
+                return;
+            }
+        }
+        System.out.println("No staff with this ID was found.");
+    }
 
 
 }
