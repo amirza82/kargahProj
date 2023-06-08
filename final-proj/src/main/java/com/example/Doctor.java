@@ -1,7 +1,4 @@
 package com.example;
-
-import java.util.Scanner;
-
 public class Doctor extends Nurse{
     private String profesion;
 

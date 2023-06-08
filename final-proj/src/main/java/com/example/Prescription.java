@@ -10,7 +10,14 @@ public class Prescription {
     private Integer ID;
     private static Integer classID = 1;
     
-    
+        public Prescription(String info, Integer doctoreID, Integer patientID, Date date, Integer iD) {
+        this.info = info;
+        this.doctoreID = doctoreID;
+        this.patientID = patientID;
+        this.date = date;
+        ID = iD;
+    }
+
     public Prescription(String info, int doctoreID, int patientID) {
         this.info = info;
         this.doctoreID = doctoreID;

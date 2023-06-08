@@ -1,12 +1,13 @@
 package com.example;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Hospital {
 
-    private static List<Person> staff;
-    private static List<Person> patients;
+    private static List<Person> staff = new ArrayList<Person>();
+    private static List<Person> patients = new ArrayList<Person>();
     private static Admin admin = new Admin("Admin", "Password");
     
     public static Admin getAdmin() {

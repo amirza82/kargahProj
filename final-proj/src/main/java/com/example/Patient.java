@@ -1,9 +1,10 @@
 package com.example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Patient extends Person {
-    private List<Prescription> prescriptions;
+    private List<Prescription> prescriptions = new ArrayList<Prescription>();
     private String description;
     
     public Patient(String name, String phoneNumber, String email, String address, int ID,
@@ -29,6 +30,7 @@ public class Patient extends Person {
     @Override
     public void print(){
         super.print();
+        System.out.println(this.description);
         System.out.println("\nprescriptions: ");
         for (int i = 0; i < this.prescriptions.size(); i++) {
             System.out.println(i + ". {\n" + prescriptions.get(i)  + "\n}\n");
