@@ -16,9 +16,14 @@ public class Doctor extends Nurse{
     }
 
     @Override
-    public void print() {
-        super.print();
-        System.out.println("Profesion" + profesion);
+    public void show_prof() {
+        super.show_prof();
     }
 
+    public void print() {
+        super.show_prof();
+        System.out.println("Department: "+department);
+        System.out.println("Profesion: " + profesion);
+
+    }
 }

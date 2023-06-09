@@ -1,7 +1,7 @@
 package com.example;
 
-public class Person {
-    
+public class Person implements IHospital{
+
     private String name;
     private String phoneNumber;
     private String email;
@@ -54,13 +54,13 @@ public class Person {
     }
 
 
-    public void print(){
+    @Override
+    public void show_prof() {
         System.out.println("Name: " + this.name);
         System.out.println("phoneNumber: " + this.phoneNumber);
-        System.out.println("email" + this.email);
+        System.out.println("email: " + this.email);
         System.out.println("Address: " + this.address);
         System.out.println("ID: " + this.ID);
     }
-
 }
 

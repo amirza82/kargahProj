@@ -4,23 +4,16 @@ import java.util.Date;
 
 public class Prescription {
     private String info;
-    private Integer doctoreID;
+    private Doctor doctore;
     private Integer patientID;
     private Date date;
     private Integer ID;
     private static Integer classID = 1;
-    
-        public Prescription(String info, Integer doctoreID, Integer patientID, Date date, Integer iD) {
-        this.info = info;
-        this.doctoreID = doctoreID;
-        this.patientID = patientID;
-        this.date = date;
-        ID = iD;
-    }
 
-    public Prescription(String info, int doctoreID, int patientID) {
+
+    public Prescription(String info, Doctor doctore, int patientID) {
         this.info = info;
-        this.doctoreID = doctoreID;
+        this.doctore = doctore;
         this.patientID = patientID;
         this.date = new Date();
         this.ID = classID++;
@@ -33,11 +26,11 @@ public class Prescription {
     public void setInfo(String info) {
         this.info = info;
     }
-    public Integer getDoctoreID() {
-        return doctoreID;
+    public Doctor getDoctore() {
+        return doctore;
     }
-    public void setDoctoreID(int doctoreID) {
-        this.doctoreID = doctoreID;
+    public void setDoctore(Doctor doctore) {
+        this.doctore = doctore;
     }
     public Integer getPatientID() {
         return patientID;
@@ -60,9 +53,10 @@ public class Prescription {
 
     @Override
     public String toString(){
-        return info + " " + doctoreID.toString() + " " + patientID.toString();
+        return "DoctorID: "+ doctore.getID()+ " - " +"Doctor's Name: "+ doctore.getName()+ " - " +"Doctor's profesion: "+doctore.getProfesion()
+                +"\n"+"Prescription: "+info +"\n"+"In Date: "+this.date;
     }
-    
+
 
 
 }

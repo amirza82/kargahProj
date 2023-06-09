@@ -8,7 +8,13 @@ public class Nurse extends Person{
     }
 
     @Override
-    public void print(){
-        super.print();
+    public void show_prof(){
+        super.show_prof();
+    }
+    public void print()
+    {
+        super.show_prof();
+        System.out.println("Department: "+department);
+
     }
 }
