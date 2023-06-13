@@ -61,7 +61,7 @@ public class App {
 
 
 
-
+        Hospital.discharge((Doctor)Hospital.getStaffByID(2), (Patient)Hospital.getPatientByID(2));
 
 
 
@@ -141,7 +141,7 @@ try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost
         }
 
 
-        
+
 
 
 

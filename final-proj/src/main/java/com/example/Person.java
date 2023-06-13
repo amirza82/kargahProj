@@ -13,6 +13,7 @@ public class Person {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
+        this.email = email;
         this.ID = ID;
         this.password = password;
     }
